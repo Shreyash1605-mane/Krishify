@@ -186,13 +186,18 @@ const App: React.FC = () => {
   // Product Management (CRUD)
   const handleAddProduct = async (newProductData: Omit<Product, 'id' | 'farmer' | 'reviews'>) => {
     if (!currentUser || currentUser.role !== 'farmer') return;
+    const category = (newProductData as any).category || 'produce';
+    const type = (newProductData as any).type || 'sale';
+    const pricingUnit = type === 'rental' ? 'hour' : 'kg';
+
     const newProduct = {
       ...newProductData,
       farmer: currentUser.uid,
       farmerName: currentUser.name,
       reviews: [],
       location: currentUser.location,
-      category: 'produce' as 'produce',
+      category,
+      pricingUnit,
     };
     const docRef = await addDoc(collection(db, 'products'), newProduct);
     setProducts(prev => [...prev, { ...newProduct, id: docRef.id }]);
