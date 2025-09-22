@@ -27,7 +27,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onNavigate, onForgotPass
   return (
     <div 
       className="flex flex-col items-center justify-center min-h-screen w-full bg-cover bg-center"
-      style={{ backgroundImage: "url('/logo.jpg')" }}
+  style={{ backgroundImage: "url('/background.jpeg')" }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="relative p-8 bg-white bg-opacity-90 backdrop-blur-sm rounded-2xl shadow-xl max-w-sm w-full mx-4">

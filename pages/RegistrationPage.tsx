@@ -57,7 +57,7 @@ const RegistrationPage: React.FC<RegistrationPageProps> = ({ onRegister, onNavig
   return (
   <div 
     className="flex items-center justify-center min-h-screen w-full bg-cover bg-center py-12 px-4"
-    style={{ backgroundImage: "url('/logo.jpg')" }}
+    style={{ backgroundImage: "url('/background.jpeg')" }}
   >
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       <div className="relative p-8 bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-xl max-w-lg w-full">
