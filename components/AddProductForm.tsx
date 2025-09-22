@@ -4,7 +4,7 @@ import type { Product } from '../types';
 import CameraModal from './CameraModal';
 
 interface AddProductFormProps {
-  onSubmit: (product: Omit<Product, 'id' | 'farmer' | 'reviews' | 'category'>) => void;
+  onSubmit: (product: Omit<Product, 'id' | 'farmer' | 'reviews'>) => void;
 }
 
 const AddProductForm: React.FC<AddProductFormProps> = ({ onSubmit }) => {

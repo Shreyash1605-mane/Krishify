@@ -108,7 +108,9 @@ const ProductPage: React.FC<ProductPageProps> = (props) => {
             )}
           </div>
           
-          {showAddForm && pageConfig.allowAdding && <AddProductForm onSubmit={onAddProduct} />}
+          {showAddForm && (pageConfig.allowAdding || (mode === 'farmers-market' && user.role === 'farmer')) && (
+            <AddProductForm onSubmit={onAddProduct} />
+          )}
 
           {pageConfig.sections.map(section => (
               <ProductSection key={section.title} title={section.title} items={section.items} />
