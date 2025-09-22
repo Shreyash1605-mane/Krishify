@@ -1,0 +1,8 @@
+{
+  "name": "AI Farmer Advisory System and Market Palce ",
+  "description": "An AI-powered advisory system that allows farmers to ask queries in their own language and receive accurate, context-aware answers instantly, with support for text and image uploads.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
