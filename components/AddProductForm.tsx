@@ -13,6 +13,7 @@ const AddProductForm: React.FC<AddProductFormProps> = ({ onSubmit }) => {
   const [imageUrl, setImageUrl] = useState('');
   const [stock, setStock] = useState('');
   const [type, setType] = useState<'sale' | 'rental'>('sale');
+  const [category, setCategory] = useState<'produce' | 'supplies' | 'machinery'>('produce');
   const [city, setCity] = useState('');
   
   const [isCameraOpen, setIsCameraOpen] = useState(false);
@@ -21,7 +22,7 @@ const AddProductForm: React.FC<AddProductFormProps> = ({ onSubmit }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !price || (!imageUrl && !capturedImage) || !stock || !type) {
+    if (!name || !price || (!imageUrl && !capturedImage) || !stock || !type || !category) {
       alert('Please fill all fields');
       return;
     }
@@ -34,6 +35,7 @@ const AddProductForm: React.FC<AddProductFormProps> = ({ onSubmit }) => {
       farmerName: '',
       stock: parseInt(stock, 10),
       type,
+      category,
       location: { city },
     });
     // Reset form
@@ -52,7 +54,7 @@ const AddProductForm: React.FC<AddProductFormProps> = ({ onSubmit }) => {
       <h2 className="text-2xl font-bold text-gray-700 mb-4">Add a New Product</h2>
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Product Name" className="p-3 border border-gray-300 rounded-lg" required />
-        <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Price per kg" step="0.01" className="p-3 border border-gray-300 rounded-lg" required/>
+        <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} placeholder={type === 'sale' ? 'Price per kg' : 'Price per hour'} step="0.01" className="p-3 border border-gray-300 rounded-lg" required/>
         <input type="number" value={stock} onChange={(e) => setStock(e.target.value)} placeholder="Stock (units)" step="1" className="p-3 border border-gray-300 rounded-lg" required />
         
         <div className="col-span-1 md:col-span-2 flex items-center space-x-2">
@@ -60,9 +62,16 @@ const AddProductForm: React.FC<AddProductFormProps> = ({ onSubmit }) => {
             <button type="button" onClick={() => setIsCameraOpen(true)} className="p-3 bg-gray-200 rounded-lg hover:bg-gray-300">📸</button>
         </div>
 
-        <select value={type} className="p-3 border border-gray-300 rounded-lg bg-white" disabled>
-            <option value="sale">For Sale (Produce)</option>
-        </select>
+    <select value={category} onChange={(e) => setCategory(e.target.value as any)} className="p-3 border border-gray-300 rounded-lg bg-white">
+      <option value="produce">Produce</option>
+      <option value="supplies">Supplies</option>
+      <option value="machinery">Machinery</option>
+    </select>
+
+    <select value={type} onChange={(e) => setType(e.target.value as any)} className="p-3 border border-gray-300 rounded-lg bg-white">
+      <option value="sale">For Sale</option>
+      <option value="rental">For Rent (per hour)</option>
+    </select>
 
         <input type="text" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Your City/Town" className="p-3 border border-gray-300 rounded-lg" required />
         

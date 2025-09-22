@@ -97,6 +97,15 @@ const ProductPage: React.FC<ProductPageProps> = (props) => {
                 {showAddForm ? 'Cancel' : '＋ Add New Product'}
               </button>
             )}
+            {/* Allow farmers to add products directly from Farmers' Marketplace view */}
+            {mode === 'farmers-market' && user.role === 'farmer' && (
+              <button
+                onClick={() => setShowAddForm(!showAddForm)}
+                className="ml-3 px-4 py-2 bg-yellow-600 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-700"
+              >
+                {showAddForm ? 'Close Add Form' : '＋ Add Listing (Farmers)'}
+              </button>
+            )}
           </div>
           
           {showAddForm && pageConfig.allowAdding && <AddProductForm onSubmit={onAddProduct} />}
