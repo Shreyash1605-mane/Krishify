@@ -35,7 +35,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onNavigate, onForgotPass
       {/* Background image from public folder */}
       <div className="absolute inset-0 -z-10">
         <img
-          src="https://media.istockphoto.com/id/1284378353/photo/young-indian-farmer-using-smartphone-in-cotton-field.jpg?s=2048x2048&w=is&k=20&c=PAsTawGLMowiyu_p6EaZzlnfS4QegF5C51MluvSPRKA="
+          url="https://media.istockphoto.com/id/1284378353/photo/young-indian-farmer-using-smartphone-in-cotton-field.jpg?s=2048x2048&w=is&k=20&c=PAsTawGLMowiyu_p6EaZzlnfS4QegF5C51MluvSPRKA="
           alt="background"
           className="h-full w-full object-cover blur-[25px] scale-105"
         />
