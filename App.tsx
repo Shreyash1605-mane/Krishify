@@ -186,17 +186,18 @@ const App: React.FC = () => {
   // Product Management (CRUD)
   const handleAddProduct = async (newProductData: Omit<Product, 'id' | 'farmer' | 'reviews'>) => {
     if (!currentUser || currentUser.role !== 'farmer') return;
-    const category = (newProductData as any).category || 'produce';
-    const type = (newProductData as any).type || 'sale';
-    const pricingUnit = type === 'rental' ? 'hour' : 'kg';
+    const category: Product['category'] = newProductData.category ?? 'produce';
+    const type: Product['type'] = newProductData.type ?? 'sale';
+    const pricingUnit: NonNullable<Product['pricingUnit']> = type === 'rental' ? 'hour' : 'kg';
 
-    const newProduct = {
+    const newProduct: Omit<Product, 'id'> = {
       ...newProductData,
       farmer: currentUser.uid,
       farmerName: currentUser.name,
       reviews: [],
-      location: currentUser.location,
+      location: newProductData.location ?? currentUser.location,
       category,
+      type,
       pricingUnit,
     };
     const docRef = await addDoc(collection(db, 'products'), newProduct);
@@ -348,7 +349,7 @@ const App: React.FC = () => {
     switch (currentPage) {
       case 'chat': return <ChatPage />;
       case 'schemes': return <SchemesPage />;
-      case 'experts': return <ExpertsPage />;
+      case 'experts': return <ExpertsPage currentUser={currentUser} />;
       case 'profile': return <ProfilePage user={currentUser} />;
       case 'cart': return <CartPage {...commonCartProps} />;
       case 'myProduce':

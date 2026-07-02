@@ -4,8 +4,9 @@ import ChatWindow from '../components/ChatWindow';
 import { useChatManager } from '../hooks/useChatManager';
 import type { ChatSession } from '../types';
 import { startChat } from '../services/geminiService';
-import { SCHEMES } from '../constants';
+import { SCHEMES, LOANS } from '../constants';
 import SchemeCard from '../components/SchemeCard';
+import LoanCard from '../components/LoanCard';
 
 const SCHEMES_SYSTEM_INSTRUCTION = `You are an expert financial advisor for farmers. Your primary role is to provide information on government schemes, bank loans, interest rates, and application processes. Be clear, concise, and helpful. Always provide links to official application forms when available. All responses must be in English.`;
 
@@ -40,6 +41,13 @@ const SchemesPage: React.FC = () => {
                 <SchemeCard key={scheme.id} scheme={scheme} />
             ))}
          </div>
+     <h2 className="text-xl font-semibold text-gray-800 mt-8">Available Loan Products</h2>
+     <p className="text-sm text-gray-500 mt-1">Loans that may help with working capital and seasonal needs.</p>
+     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+      {LOANS.map(loan => (
+        <LoanCard key={loan.id} loan={loan} />
+      ))}
+     </div>
       </div>
       <div className="flex-grow flex flex-col md:flex-row overflow-hidden">
           <ChatWindow 

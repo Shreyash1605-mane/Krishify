@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Expert } from '../types';
+import { EXPERT_PLACEHOLDER } from '../constants';
 
 interface ExpertCardProps {
     expert: Expert;
@@ -9,7 +10,7 @@ interface ExpertCardProps {
 const ExpertCard: React.FC<ExpertCardProps> = ({ expert, onBook }) => {
     return (
         <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-            <img src={expert.imageUrl} alt={expert.name} className="w-full h-56 object-cover object-center" />
+            <img src={expert.imageUrl || EXPERT_PLACEHOLDER} alt={expert.name} className="w-full h-56 object-cover object-center" />
             <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-bold text-gray-800">{expert.name}</h3>
                 <div className="flex flex-wrap gap-2 my-2">

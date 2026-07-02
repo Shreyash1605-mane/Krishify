@@ -22,6 +22,7 @@ export interface User {
   name: string;
   contact: string;
   address: string;
+  profileImage?: string;
   password?: string; // Should not be stored in Firestore, but used for registration
   role: UserRole;
   farmDetails?: string;
@@ -46,6 +47,7 @@ export interface Product {
   stock: number;
   type: 'sale' | 'rental'; // 'rental' price is per day
   category: 'produce' | 'supplies' | 'machinery';
+  pricingUnit?: 'kg' | 'hour'; // optional: 'kg' for sale items, 'hour' for rental machinery
   reviews: Review[];
   location?: { city: string }; // For rental machinery
 }
@@ -115,6 +117,21 @@ export interface ChatSession {
   language: LanguageCode;
 }
 
+export interface ExpertInteractionLog {
+  id?: string;
+  userId: string;
+  userName: string;
+  expertId: string;
+  expertName: string;
+  sender: 'user' | 'expert';
+  interactionType: 'message' | 'call';
+  callType?: 'video' | 'voice';
+  message?: string;
+  details: string;
+  status: 'sent' | 'connected' | 'queued';
+  createdAt: string;
+}
+
 export interface Expert {
     id: string;
     name: string;
@@ -128,4 +145,13 @@ export interface Scheme {
     title: string;
     description: string;
     link: string;
+}
+
+export interface Loan {
+  id: string;
+  name: string;
+  provider: string;
+  interestRate: string; // e.g. '7.5% p.a.'
+  maxAmount: string; // e.g. '₹2,00,000'
+  link: string;
 }

@@ -55,11 +55,12 @@ const RegistrationPage: React.FC<RegistrationPageProps> = ({ onRegister, onNavig
   );
 
   return (
-  <div 
-    className="flex items-center justify-center min-h-screen w-full bg-cover bg-center py-12 px-4"
-    style={{ backgroundImage: "url('/background.jpeg')" }}
-  >
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div className="relative flex items-center justify-center min-h-screen w-full overflow-hidden py-12 px-4">
+      <div className="absolute inset-0">
+        <img src="/Login Page 1.jpg" alt="background" className="w-full h-full object-cover filter blur-sm brightness-75" />
+        <img src="/Login Page 1.jpg" alt="background-fallback" className="w-full h-full object-cover filter blur-sm brightness-75 absolute inset-0" />
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      </div>
       <div className="relative p-8 bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-xl max-w-lg w-full">
         <h1 className="text-3xl font-bold text-gray-800 mb-2 text-center">Create Account</h1>
         <div className="flex justify-center border-b-2 border-gray-200 mb-6">

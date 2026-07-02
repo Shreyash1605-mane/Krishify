@@ -170,46 +170,69 @@ export const ORDERS: Order[] = [
 
 
 export const EXPERTS: Expert[] = [
-    {
-        id: 'expert1',
-        name: 'Dr. Anjali Desai',
-        expertise: ['Soil Health', 'Organic Farming'],
-        bio: 'With over 20 years of experience in agronomy, Dr. Desai specializes in sustainable farming practices and soil enhancement techniques.',
-        imageUrl: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=1974&auto=format&fit=crop',
-    },
+  {
+    id: 'expert1',
+    name: 'Dr. Ram Kumar',
+    expertise: ['Soil Health', 'Organic Farming'],
+    bio: 'With over 20 years of experience in agronomy, Dr. Kumar specializes in sustainable farming practices and soil enhancement techniques.',
+    imageUrl: 'https://media.istockphoto.com/id/1367068216/photo/indian-farmer-stock-photo.jpg?s=612x612&w=0&k=20&c=oWgo7XuzHZAGlG55bsiyXwqvWIUBxkNMixpzORUOB7Q=',
+  },
     {
         id: 'expert2',
-        name: 'Vikram Singh',
+        name: 'Dr. Radha Patil',
         expertise: ['Pest Control', 'Crop Rotation'],
-        bio: 'Vikram is an integrated pest management (IPM) specialist who helps farmers reduce reliance on chemical pesticides through natural and strategic methods.',
-        imageUrl: 'https://images.unsplash.com/photo-1610056903337-79753e4093c7?q=80&w=1974&auto=format&fit=crop',
+        bio: 'Dr.Patil is an integrated pest management (IPM) specialist who helps farmers reduce reliance on chemical pesticides through natural and strategic methods.',
+        imageUrl: 'https://th.bing.com/th/id/OIP.pLJ56_CXZ4jHdjejKJvBRwHaEK?w=286&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
     },
     {
         id: 'expert3',
-        name: 'Meera Reddy',
+        name: 'Dr.Meera Bhosle',
         expertise: ['Irrigation Systems', 'Water Management'],
-        bio: 'An agricultural engineer, Meera designs and implements efficient irrigation systems to help farms conserve water and improve crop yields.',
-        imageUrl: 'https://images.unsplash.com/photo-1542596594-649ed6e6b342?q=80&w=1974&auto=format&fit=crop',
+        bio: 'An agricultural engineer, Dr.Meera designs and implements efficient irrigation systems to help farms conserve water and improve crop yields.',
+        imageUrl: 'https://th.bing.com/th/id/OIP.ZsQgw413FB4YkkGfSM8NIwHaEc?w=256&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
     },
+    
 ];
+
+// Placeholder image used for experts when an expert doesn't have an imageUrl
+export const EXPERT_PLACEHOLDER = '/background.jpeg';
 
 export const SCHEMES: Scheme[] = [
     {
         id: 'scheme1',
         title: 'PM-KISAN Scheme',
         description: 'A government scheme that provides income support of ₹6,000 per year to all landholding farmer families.',
-        link: '#',
+        link: 'https://pmkisan.gov.in/',
     },
     {
         id: 'scheme2',
         title: 'Pradhan Mantri Fasal Bima Yojana (PMFBY)',
         description: 'Provides comprehensive insurance coverage against crop failure, helping to stabilize the income of farmers.',
-        link: '#',
+        link: 'https://pmfby.gov.in/',
     },
     {
         id: 'scheme3',
         title: 'Kisan Credit Card (KCC)',
         description: 'A scheme to provide farmers with timely access to credit for their agricultural needs at a lower interest rate.',
-        link: '#',
+        link: 'https://www.myscheme.gov.in/schemes/kcc',
     }
+];
+
+export const LOANS = [
+  {
+    id: 'loan1',
+    name: 'Kisan Credit Card (KCC) Loan',
+    provider: 'National Bank',
+    interestRate: '7.0% p.a.',
+    maxAmount: '₹1,00,000',
+    link: 'https://www.rbi.org.in/Scripts/BS_SchemeView.aspx?Id=112',
+  },
+  {
+    id: 'loan2',
+    name: 'Short Term Crop Loan',
+    provider: 'State Cooperative Bank',
+    interestRate: '8.5% p.a.',
+    maxAmount: '₹2,00,000',
+    link: '#',
+  },
 ];

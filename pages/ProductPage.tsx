@@ -25,6 +25,7 @@ const ProductPage: React.FC<ProductPageProps> = (props) => {
   
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const pageConfig = useMemo(() => {
     switch (mode) {
@@ -56,6 +57,13 @@ const ProductPage: React.FC<ProductPageProps> = (props) => {
         };
     }
   }, [mode, products, user]);
+
+  const handleAddProductWithFeedback = (product: Omit<Product, 'id' | 'farmer' | 'reviews'>) => {
+    onAddProduct(product);
+    setShowAddForm(false);
+    setSuccessMessage(`✓ "${product.name}" has been added successfully!`);
+    setTimeout(() => setSuccessMessage(null), 3000);
+  };
 
   const handleEditProduct = (product: Product) => {
       onUpdateProduct(product);
@@ -107,10 +115,17 @@ const ProductPage: React.FC<ProductPageProps> = (props) => {
               </button>
             )}
           </div>
+
+          {/* Success Message */}
+          {successMessage && (
+            <div className="mb-4 p-4 bg-green-100 border border-green-400 text-green-800 rounded-lg animate-pulse">
+              {successMessage}
+            </div>
+          )}
           
           {showAddForm && (pageConfig.allowAdding || (mode === 'farmers-market' && user.role === 'farmer')) && (
             <div className="mb-6">
-              <AddProductForm onSubmit={onAddProduct} />
+              <AddProductForm onSubmit={handleAddProductWithFeedback} />
             </div>
           )}
 
