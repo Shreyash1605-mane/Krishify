@@ -31,16 +31,23 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onNavigate, onForgotPass
   };
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden">
-      {/* Background image from public folder */}
-      <div className="absolute inset-0 -z-10">
-        <img
-          url="https://media.istockphoto.com/id/1284378353/photo/young-indian-farmer-using-smartphone-in-cotton-field.jpg?s=2048x2048&w=is&k=20&c=PAsTawGLMowiyu_p6EaZzlnfS4QegF5C51MluvSPRKA="
-          alt="background"
-          className="h-full w-full object-cover blur-[25px] scale-105"
-        />
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
+   <div className="relative min-h-screen w-full overflow-hidden">
+  {/* Background image from public folder */}
+  <div className="absolute inset-0 -z-10">
+    <img
+      src="https://media.istockphoto.com/id/1284378353/photo/young-indian-farmer-using-smartphone-in-cotton-field.jpg?s=2048x2048&w=is&k=20&c=PAsTawGLMowiyu_p6EaZzlnfS4QegF5C51MluvSPRKA="
+      alt="background"
+      className="h-full w-full object-cover blur-[25px] scale-105"
+    />
+    <div className="absolute inset-0 bg-black/40" />
+  </div>
+
+  {/* ... your form ... */}
+</form>
+
+<p className="mt-6 text-center text-sm text-gray-500">
+  Don{"'"}t have an account?{" "}
+  <button
 
       {/* Content */}
       <div className="flex min-h-screen items-center justify-center px-4">
