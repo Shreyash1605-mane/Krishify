@@ -30,7 +30,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onNavigate, onForgotPass
       <div className="absolute inset-0">
   {/* Prefer the new file name; if it doesn't exist the browser will 404 but the fallback will still be present underneath */}
   <img src="./loginpage.png" alt="background" className="w-full h-full object-cover filter blur-sm brightness-75" />
-        <img src="/Login Page 1.jpg" alt="background-fallback" className="w-full h-full object-cover filter blur-sm brightness-75 absolute inset-0" />
+        <img src="/loginpage.png" alt="background-fallback" className="w-full h-full object-cover filter blur-sm brightness-75 absolute inset-0" />
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
       <div className="relative p-8 bg-white bg-opacity-90 backdrop-blur-sm rounded-2xl shadow-xl max-w-sm w-full mx-4">
