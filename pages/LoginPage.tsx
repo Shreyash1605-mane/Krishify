@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import type { Page } from '../types';
-import backgroundImage from '../Background.jpg';
 
 interface LoginPageProps {
   onLogin: (email: string, pass: string) => Promise<boolean>;
@@ -36,7 +35,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onNavigate, onForgotPass
       {/* Background image from public folder */}
       <div className="absolute inset-0 z-0">
         <img
-          src={backgroundImage}
+          src="https://img.magnific.com/premium-photo/happy-indian-farmer-with-freshly-harvested-onion_822782-1186.jpg?w=360"
           alt="background"
           className="h-full w-full object-cover blur-[2px] scale-105"
         />
