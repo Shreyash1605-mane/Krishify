@@ -1,4 +1,4 @@
-# 🌾 Krishify (Website) 
+# 🌾 Krishify (https://krishify-seven.vercel.app/) 
 
 An integrated digital agricultural platform developed to promote sustainable rural development and economically provide farmers in Maharashtra with two things (cite: 1). Using three pieces of technology – artificial intelligence (AI), professional agronomic assistance and a direct-to-consumer marketplace through decentralized operations – Krishify will solve some of the most pressing issues facing Indian farmers, such as unpredictability of crop disease and crop pricing controlled by the almighty middleman . 
 --- 
