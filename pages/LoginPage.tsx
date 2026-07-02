@@ -29,7 +29,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onNavigate, onForgotPass
       {/* Blurred static background image */}
       <div className="absolute inset-0">
   {/* Prefer the new file name; if it doesn't exist the browser will 404 but the fallback will still be present underneath */}
-  <img src="/Login Page 1.jpg" alt="background" className="w-full h-full object-cover filter blur-sm brightness-75" />
+  <img src="./loginpage.png" alt="background" className="w-full h-full object-cover filter blur-sm brightness-75" />
         <img src="/Login Page 1.jpg" alt="background-fallback" className="w-full h-full object-cover filter blur-sm brightness-75 absolute inset-0" />
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
