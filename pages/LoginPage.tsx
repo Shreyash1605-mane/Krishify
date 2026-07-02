@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { Page } from '../types';
+import backgroundImage from '../Background.jpg';
 
 interface LoginPageProps {
   onLogin: (email: string, pass: string) => Promise<boolean>;
@@ -31,19 +32,19 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onNavigate, onForgotPass
   };
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden">
+    <div className="relative isolate min-h-screen w-full overflow-hidden">
       {/* Background image from public folder */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0">
         <img
-          src="https://media.istockphoto.com/id/1284378353/photo/young-indian-farmer-using-smartphone-in-cotton-field.jpg?s=2048x2048&w=is&k=20&c=PAsTawGLMowiyu_p6EaZzlnfS4QegF5C51MluvSPRKA="
+          src={backgroundImage}
           alt="background"
-          className="h-full w-full object-cover blur-[25px] scale-105"
+          className="h-full w-full object-cover blur-[2px] scale-105"
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Content */}
-      <div className="flex min-h-screen items-center justify-center px-4">
+      <div className="relative z-10 flex min-h-screen items-center justify-center px-4">
         <div className="w-full max-w-sm rounded-2xl bg-white/90 p-8 shadow-xl backdrop-blur-sm">
           <h1 className="mb-6 text-center text-3xl font-bold text-gray-800">Welcome Krishify</h1>
 
