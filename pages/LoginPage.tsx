@@ -31,23 +31,16 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onNavigate, onForgotPass
   };
 
   return (
-   <div className="relative min-h-screen w-full overflow-hidden">
-  {/* Background image from public folder */}
-  <div className="absolute inset-0 -z-10">
-    <img
-      src="https://media.istockphoto.com/id/1284378353/photo/young-indian-farmer-using-smartphone-in-cotton-field.jpg?s=2048x2048&w=is&k=20&c=PAsTawGLMowiyu_p6EaZzlnfS4QegF5C51MluvSPRKA="
-      alt="background"
-      className="h-full w-full object-cover blur-[25px] scale-105"
-    />
-    <div className="absolute inset-0 bg-black/40" />
-  </div>
-
-  {/* ... your form ... */}
-</form>
-
-<p className="mt-6 text-center text-sm text-gray-500">
-  Don{"'"}t have an account?{" "}
-  <button
+    <div className="relative min-h-screen w-full overflow-hidden">
+      {/* Background image from public folder */}
+      <div className="absolute inset-0 -z-10">
+        <img
+          src="https://media.istockphoto.com/id/1284378353/photo/young-indian-farmer-using-smartphone-in-cotton-field.jpg?s=2048x2048&w=is&k=20&c=PAsTawGLMowiyu_p6EaZzlnfS4QegF5C51MluvSPRKA="
+          alt="background"
+          className="h-full w-full object-cover blur-[25px] scale-105"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
 
       {/* Content */}
       <div className="flex min-h-screen items-center justify-center px-4">
@@ -92,14 +85,14 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onNavigate, onForgotPass
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-lg bg-green-600 px-4 py-3 font-semibold text-white shadow-md transition hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-o[...]
+              className="w-full rounded-lg bg-green-600 px-4 py-3 font-semibold text-white shadow-md transition hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
             >
               {loading ? 'Logging in...' : 'Login'}
             </button>
           </form>
 
           <p className="mt-6 text-center text-sm text-gray-500">
-            Don&apos;t have an account?{' '}
+            {"Don't have an account? "}
             <button
               type="button"
               onClick={() => onNavigate('register')}
