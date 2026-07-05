@@ -1,6 +1,6 @@
 # 🌾 Krishify (https://krishify-seven.vercel.app/) 
 
-An integrated digital agricultural platform developed to promote sustainable rural development and economically provide farmers in Maharashtra with two things (cite: 1). Using three pieces of technology – artificial intelligence (AI), professional agronomic assistance and a direct-to-consumer marketplace through decentralized operations – Krishify will solve some of the most pressing issues facing Indian farmers, such as unpredictability of crop disease and crop pricing controlled by the almighty middleman . 
+An integrated digital agricultural platform developed to promote sustainable rural development and economically provide farmers in Maharashtra with two things . Using three pieces of technology – artificial intelligence (AI), professional agronomic assistance and a direct-to-consumer marketplace through decentralized operations – Krishify will solve some of the most pressing issues facing Indian farmers, such as unpredictability of crop disease and crop pricing controlled by the almighty middleman . 
 --- 
 ## 🚀 Featured Module 
 
@@ -69,7 +69,7 @@ graph TD
 
 **🔮 Future Scope**:
 
-Future iterations of Krishify's digital agriculture platform will continue to modernize the user experience by adding (Source: 1):
+Future iterations of Krishify's digital agriculture platform will continue to modernize the user experience by adding :
 
 *	Internet of Things (IoT) sensors mounted on farms to provide real-time information about soil and ambient environmental conditions .
 *	Predictive analytics engines to assist farmers in making more informed decisions about when to plant and help them prepare for seasonal weather variations .
@@ -89,7 +89,7 @@ This project is built directly off the published research paper titled:
 
 
 ### Contributors
-Mr. Shreyash Udayrao Mane, Computer Engineering Department, D. Y. Patil School of Engineering & Management, Kolhapur [cite: 1]  
+Mr. Shreyash Udayrao Mane, Computer Engineering Department, D. Y. Patil School of Engineering & Management, Kolhapur 
 ---
 
 ## 📄 License
